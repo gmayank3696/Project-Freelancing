@@ -14,9 +14,11 @@ def successGet(name):
 def login():
    if request.method == 'POST':
       user = request.form['nm']
+      print(type(request.form))
       return redirect(url_for('successPost',name = user))
    else:
       user = request.args.get('nm')
+      print(type(request.args))
       return redirect(url_for('successGet',name = user))
 
 if __name__ == '__main__':
